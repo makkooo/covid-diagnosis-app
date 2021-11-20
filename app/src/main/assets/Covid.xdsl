@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Frontliner">
+			<state id="True" />
+			<state id="False" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="CloseContact">
+			<state id="True" />
+			<state id="False" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="TravelledOutside">
+			<state id="True" />
+			<state id="False" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<noisyadder id="Covid">
+			<state id="Present" />
+			<state id="Absent" />
+			<parents>TravelledOutside CloseContact Frontliner</parents>
+			<dstates>1 1 1 1</dstates>
+			<weights>1 2 1.5 1</weights>
+			<parameters>0.4 0.6 0 1 0.7 0.3 0 1 0.6 0.4 0 1 0 1</parameters>
+		</noisyadder>
+		<cpt id="Fever">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.538 0.462 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Cough">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.674 0.326 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Fatigue">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.364 0.636 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Dyspnea">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.249 0.751 0.15 0.85</probabilities>
+		</cpt>
+		<cpt id="Myalgia">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.266 0.734 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="Headache">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.219 0.781 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="SoreThroat">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.212 0.788 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="Diarrhea">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.116 0.884 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="Aguesia_Anosmia">
+			<state id="True" />
+			<state id="False" />
+			<parents>Covid</parents>
+			<probabilities>0.41 0.59 0.1 0.9</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.6518.0 ACADEMIC" name="Network1">
+			<node id="Covid">
+				<name>Current Covid-19 Status</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>737 381 851 458</position>
+				<barchart active="true" width="168" height="64" />
+			</node>
+			<node id="TravelledOutside">
+				<name>Travelled Outside</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>524 158 572 188</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="CloseContact">
+				<name>Close Contact</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>767 156 819 188</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Frontliner">
+				<name>Frontliner</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1016 155 1068 187</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Fever">
+				<name>Fever</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>400 404 452 436</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Cough">
+				<name>Cough</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>463 474 515 506</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Fatigue">
+				<name>Fatigue</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>526 543 578 575</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Dyspnea">
+				<name>Shortness of Breath</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>768 611 820 643</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Myalgia">
+				<name>Muscle Pain</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>904 611 956 643</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Headache">
+				<name>Headache</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>992 540 1044 572</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="SoreThroat">
+				<name>Sore Throat</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1059 471 1111 503</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Diarrhea">
+				<name>Diarrhea</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1126 403 1178 435</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Aguesia_Anosmia">
+				<name>Loss of Taste and Smell</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>625 613 673 643</position>
+				<barchart active="true" width="141" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

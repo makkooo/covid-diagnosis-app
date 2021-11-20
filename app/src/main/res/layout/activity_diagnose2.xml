@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".DiagnoseActivity2">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:padding="10dp"
+      android:orientation="vertical">
+
+    <!--  Diagnose2 Title  -->
+    <TextView
+        android:id="@+id/dia2_act_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Other factors during the past 14 days:"
+        android:textSize="30sp"
+        android:textColor="@color/black"/>
+
+    <!--  Diagnose2 Subtitle  -->
+    <TextView
+        android:id="@+id/dia2_act_subtitle_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/roboto_light_italic"
+        android:text="@string/diagnose_subtitle_text"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+
+    <!--   Close contact CardView     -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dia2_act_contact_cv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:strokeColor="#DBDBDB"
+        app:strokeWidth="1dp">
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginStart="10dp"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dia2_act_contact_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="I had close contact with people who had any symptoms of COVID-19."
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/dia2_act_contact_subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light_italic"
+            android:text="May nakasalamuha akong mga tao na may kahit anong sintomas ng COVID-19."
+            android:textSize="15sp" />
+
+
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--   Close contact CardView     -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dia2_act_travel_cv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:strokeColor="#DBDBDB"
+        app:strokeWidth="1dp">
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginStart="10dp"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dia2_act_travel_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="I travelled outside the city or province."
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/dia2_act_travel_subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light_italic"
+            android:text="Bumiyahe ako papalabas sa siyudad o probinsya."
+            android:textSize="15sp" />
+
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--   Close contact CardView     -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dia2_act_frontliner_cv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:strokeColor="#DBDBDB"
+        app:strokeWidth="1dp">
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginStart="10dp"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dia2_act_frontliner_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="I worked outside from my home, as a frontliner."
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/dia2_act_frontliner_subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light_italic"
+            android:text="Nagtrabaho sa labas ng aking bahay, bilang isang frontliner."
+            android:textSize="15sp" />
+
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--   Submit Button   -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dia_act_sbmt_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/submit_button_text"
+        android:textColor="#090909"
+        app:backgroundTint="#f0c882"
+        app:cornerRadius="10dp" />
+  </LinearLayout>
+</ScrollView>

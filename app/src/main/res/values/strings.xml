@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CovidApp</string>
+    <string name="about_button_text">About</string>
+    <string name="about_text">Say something about the app</string>
+    <string name="diagnose_button_text">Diagnose</string>
+    <string name="diagnose_title_text">Are you experiencing any of these symptoms?</string>
+    <string name="diagnose_subtitle_text">Please select all that apply.</string>
+    <string name="fever_textview_text">Fever</string>
+    <string name="fever_title_text">Fever</string>
+    <string name="fever_subtitle_text">Lagnat</string>
+    <string name="cough_title_text">Dry Cough</string>
+    <string name="cough_subtitle_text">Ubo nang ubo</string>
+    <string name="fatigue_title_text">Fatigue</string>
+    <string name="fatigue_subtitle_text">Pagkapagod</string>
+    <string name="aches_title_text">Body Aches</string>
+    <string name="aches_subtitle_text">Pananakit ng katawan</string>
+    <string name="runny_nose_title_text">Runny Nose</string>
+    <string name="runny_nose_subtitle_text">Tumutulong Sipon</string>
+    <string name="sore_throat_title_text">Sore Throat</string>
+    <string name="sore_throat_subtitle_text">Pananakit ng Lalamunan</string>
+    <string name="diff_breath_title_text">Difficulty in Breathing</string>
+    <string name="diff_breath_subtitle_text">Hirap sa Paghinga</string>
+    <string name="diarrhea_title_text">Diarrhea</string>
+    <string name="diarrhea_subtitle_text">Pagtatae</string>
+    <string name="headache_title_text">Headache</string>
+    <string name="headache_subtitle_text">Pananakit ng Ulo</string>
+    <string name="lts_title_text">Loss of Taste and Smell</string>
+    <string name="lts_subtitle_text">Kawalan ng Panlasa o Pang-amoy</string>
+    <string name="submit_button_text">Submit</string>
+    <string name="low_prob_recom">Follow Health Protocols</string>
+    <string name="low_prob_recom_sub">Your probability of having COVID-19 is low. Please continue to practice health and safety protocols.</string>
+    <string name="high_prob_recom">Consider getting a COVID-19 Test</string>
+    <string name="high_prob_recom_sub">Your probability of having COVID-19 is high. Please get in touch with a healthcare provider and consider getting tested for COVID-19.</string>
+</resources>

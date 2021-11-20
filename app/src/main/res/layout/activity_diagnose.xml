@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".DiagnoseActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical">
+
+        <!--  Diagnose Title  -->
+        <TextView
+            android:id="@+id/dia_act_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_black"
+            android:text="@string/diagnose_title_text"
+            android:textSize="30sp"
+            android:textColor="@color/white"/>
+
+        <!--  Diagnose Subtitle  -->
+        <TextView
+            android:id="@+id/dia_act_subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/nunito_italic"
+            android:text="@string/diagnose_subtitle_text"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <!--   Fever CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_fvr_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_fvr_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/fever_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/fever_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_fvr_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/fever_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_fvr_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/fever_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Dry Cough CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_cough_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_cough_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/cough_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/cough_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_cough_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/cough_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_cough_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/cough_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Fatigue CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_ftg_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_ftg_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/fatigue_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/fatigue_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_ftg_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/fatigue_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_ftg_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/fatigue_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Body Aches CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_ache_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_ache_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/body_ache_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/aches_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_ache_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/aches_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_ache_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/aches_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Runny Nose CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_rn_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_rn_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/runny_nose_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/runny_nose_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_rn_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/runny_nose_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_rn_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/runny_nose_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Sore Throat CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_st_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_st_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/sore_throat_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/sore_throat_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_st_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/sore_throat_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_st_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/sore_throat_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Difficulty in Breathing CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_db_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_db_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp" android:background="@drawable/difficulty_breathing_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/diff_breath_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_db_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/diff_breath_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_db_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/diff_breath_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Diarrhea CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_diar_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_diar_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/diarrhea_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/diarrhea_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_diar_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/diarrhea_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_diar_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/diarrhea_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Headache CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_hdache_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_hdache_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/headache_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/headache_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_hdache_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/headache_title_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_hdache_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/headache_subtitle_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--   Loss of Taste and Smell CardView     -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dia_act_lts_cv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:strokeColor="#DBDBDB"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/dia_act_lts_iv"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/loss_taste_smell_icon"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/lts_title_text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dia_act_lts_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/lts_title_text"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:id="@+id/dia_act_lts_subtitle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_italic"
+                        android:text="@string/lts_subtitle_text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        Diagnose2 Title-->
+<!--        <TextView-->
+<!--            android:id="@+id/dia2_act_title_tv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/nunito_black"-->
+<!--            android:text="Other factors during the past 14 days:"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:paddingTop="10dp"/>-->
+
+<!--        &lt;!&ndash;  Diagnose2 Subtitle  &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/dia2_act_subtitle_tv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:fontFamily="@font/nunito_italic"-->
+<!--            android:text="@string/diagnose_subtitle_text"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textColor="@color/white"/>-->
+
+<!--        &lt;!&ndash;   Close contact CardView     &ndash;&gt;-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/dia2_act_contact_cv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:checkable="true"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:padding="10dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            app:strokeColor="#DBDBDB"-->
+<!--            app:strokeWidth="1dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/dia2_act_contact_title_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="I had close contact with people who had any symptoms of COVID-19."-->
+<!--                    android:textSize="17sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/dia2_act_contact_subtitle_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/nunito_italic"-->
+<!--                    android:text="May nakasalamuha akong mga tao na may kahit anong sintomas ng COVID-19."-->
+<!--                    android:textSize="15sp" />-->
+
+
+<!--            </LinearLayout>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--        &lt;!&ndash;   Close contact CardView     &ndash;&gt;-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/dia2_act_travel_cv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:checkable="true"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:padding="10dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            app:strokeColor="#DBDBDB"-->
+<!--            app:strokeWidth="1dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/dia2_act_travel_title_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="I travelled outside the city or province."-->
+<!--                    android:textSize="17sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/dia2_act_travel_subtitle_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/nunito_italic"-->
+<!--                    android:text="Bumiyahe ako papalabas sa siyudad o probinsya."-->
+<!--                    android:textSize="15sp" />-->
+
+<!--            </LinearLayout>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--        &lt;!&ndash;   Close contact CardView     &ndash;&gt;-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/dia2_act_frontliner_cv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:checkable="true"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:padding="10dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            app:strokeColor="#DBDBDB"-->
+<!--            app:strokeWidth="1dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/dia2_act_frontliner_title_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="I worked outside from my home, as a frontliner."-->
+<!--                    android:textSize="17sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/dia2_act_frontliner_subtitle_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/nunito_italic"-->
+<!--                    android:text="Nagtrabaho sa labas ng aking bahay, bilang isang frontliner."-->
+<!--                    android:textSize="15sp" />-->
+
+<!--            </LinearLayout>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+        <!--   Submit Button   -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dia_act_sbmt_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/submit_button_text"
+            android:fontFamily="@font/nunito_black"
+            android:textColor="#424242"
+            app:backgroundTint="@color/porsche_100"
+            app:cornerRadius="25dp" />
+
+    </LinearLayout>
+</ScrollView>
