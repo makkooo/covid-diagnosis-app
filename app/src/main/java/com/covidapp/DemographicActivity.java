@@ -2,7 +2,6 @@ package com.covidapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -51,19 +50,8 @@ public class DemographicActivity extends AppCompatActivity {
         ArrayAdapter<String> regionGroupAdapter = new ArrayAdapter<>(this, R.layout.list_item, regionGroupItems);
         regionAutoComplete.setAdapter(regionGroupAdapter);
 
-        ageAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ageGroup = adapterView.getItemAtPosition(i).toString();
-            }
-        });
-
-        regionAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                region = adapterView.getItemAtPosition(i).toString();
-            }
-        });
+        ageAutoComplete.setOnItemClickListener((adapterView, view, i, l) -> ageGroup = adapterView.getItemAtPosition(i).toString());
+        regionAutoComplete.setOnItemClickListener((adapterView, view, i, l) -> region = adapterView.getItemAtPosition(i).toString());
 
         continueButton.setOnClickListener(view -> {
 
@@ -103,31 +91,3 @@ public class DemographicActivity extends AppCompatActivity {
         }
     }
 }
-
-        /**
-          * <summary>
-          *     Debug where it needs to display error if incomplete information.
-          * </summary>
-          */
-//        continueButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view){
-//                if(ageGroupAdapter != null || regionAutoComplete != null){
-//                    goToDiagnoseActivity();
-//                }
-//                else{
-//                    warningDialog();
-//                }
-//            }
-//        });
-
-      // A button direct to the next page, WITH COMPLETE INPUT INFORMATION
-//    public void goToDiagnoseActivity(){
-//        Intent diagnose = new Intent(this, DiagnoseActivity.class);
-//        startActivity(diagnose);
-//    }
-//
-//    public void warningDialog(){
-//        WarningDialog warningDialog = new WarningDialog();
-//        warningDialog.show(getSupportFragmentManager(), "");
-//    }
-
