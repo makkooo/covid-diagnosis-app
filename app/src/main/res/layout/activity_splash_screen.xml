@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen"
+    tools:context=".SplashScreenActivity"
     android:background="@drawable/splashscreen_bg">
-
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,27 +25,14 @@
         android:id="@+id/textView"
         android:layout_width="406dp"
         android:layout_height="70dp"
-        android:fontFamily="@font/roboto_black"
+        android:fontFamily="@font/nunito_black"
         android:text="C19 Medicare"
         android:textAlignment="center"
         android:textSize="48sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="168dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="68dp"
-        android:fontFamily="@font/dancing_script_bold"
-        android:text="Medical Diagnosis"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

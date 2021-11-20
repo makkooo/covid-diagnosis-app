@@ -13,34 +13,17 @@ import android.widget.TextView;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 7000;
+    private static int SPLASH_SCREEN = 4000;
 
     //Variables
     Animation topAnim, bottomAnim;
     ImageView image;
-    TextView appname,med;
+    TextView appName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
-
-//        new smile.License(
-//                "SMILE LICENSE 4554387b 09cabaa1 36cc2297 " +
-//                        "THIS IS AN EVALUATION LICENSE THAT " +
-//                        "CANNOT BE USED FOR COMMERCIAL PURPOSES. " +
-//                        "Serial #: b6jwij3ilw7d7w9xljvsiwsq2 " +
-//                        "Valid until: 2021-11-19 " +
-//                        "Issued for: Mark (mrobrigado03@gmail.com) " +
-//                        "Organization: Polytechnic University of the Philippines " +
-//                        "Issued by BayesFusion activation server",
-//                new byte[]{
-//                        -66, 47, 118, -42, -72, 52, -93, 59, 51, 86, 99, 63, 40, -111, 109, -93,
-//                        49, 117, 107, -120, 24, -15, 48, 16, -10, 67, -59, -6, -107, 21, -78, -5,
-//                        39, 36, 21, 81, 29, 65, -65, 36, 27, 31, -81, -90, -43, 83, -68, -125,
-//                        59, 113, 2, -46, 126, 78, 116, 127, -70, 16, 99, 18, -44, -104, -82, -101
-//                }
-//        );
 
         new smile.License(
                 "SMILE LICENSE 39e75867 7569a67d 2a10428b " +
@@ -65,20 +48,15 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         //Hooks
         image = findViewById(R.id.imageView);
-        appname = findViewById(R.id.textView);
-        med = findViewById(R.id.textView2);
+        appName = findViewById(R.id.textView);
 
         image.setAnimation(topAnim);
-        appname.setAnimation(bottomAnim);
-        med.setAnimation(bottomAnim);
+        appName.setAnimation(bottomAnim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
         },SPLASH_SCREEN);
-}
+    }
 }
