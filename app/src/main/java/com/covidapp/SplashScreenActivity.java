@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.IOException;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -24,6 +28,25 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+
+        AssetUtils assetUtils = new AssetUtils();
+        File dataset = new File(getFilesDir(), "dataset.txt");
+        if(!dataset.exists()) {
+            try {
+                assetUtils.copyAsset(this, getFilesDir(), "dataset.txt");
+            } catch (IOException e) {
+                Log.e("IOException", e.getCause().toString());
+            }
+        }
+
+        File bkKno = new File(getFilesDir(), "network-knowledge.gkno");
+        if(!bkKno.exists()) {
+            try {
+                assetUtils.copyAsset(this, getFilesDir(), "network-knowledge.gkno");
+            } catch (IOException e) {
+                Log.e("IOException", e.getCause().toString());
+            }
+        }
 
         new smile.License(
                 "SMILE LICENSE 39e75867 7569a67d 2a10428b " +

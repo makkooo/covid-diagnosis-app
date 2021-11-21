@@ -12,7 +12,12 @@ import com.google.android.material.card.MaterialCardView;
 
 import org.parceler.Parcels;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 public class DiagnoseActivity extends AppCompatActivity {
 
@@ -20,7 +25,7 @@ public class DiagnoseActivity extends AppCompatActivity {
     private MaterialCardView feverCardView, coughCardView, fatigueCardView,
                              acheCardView, runny_noseCardView, sore_throatCardView,
                              diff_breathCardView, diarrheaCardView, headacheCardView,
-                             loss_taste_smellCardView,contactView, travelView, frontlineView;
+                             loss_taste_smellCardView;
     private MaterialButton submitButton;
 
     @Override
@@ -39,9 +44,6 @@ public class DiagnoseActivity extends AppCompatActivity {
         diarrheaCardView = findViewById(R.id.dia_act_diar_cv);
         headacheCardView = findViewById(R.id.dia_act_hdache_cv);
         loss_taste_smellCardView = findViewById(R.id.dia_act_lts_cv);
-//        contactView     = findViewById(R.id.dia2_act_contact_cv);
-//        travelView      = findViewById(R.id.dia2_act_travel_cv);
-//        frontlineView   = findViewById(R.id.dia2_act_frontliner_cv);
         submitButton    = findViewById(R.id.dia_act_sbmt_btn);
 
         // Set onClickListener() to variables
@@ -56,110 +58,168 @@ public class DiagnoseActivity extends AppCompatActivity {
         diarrheaCardView.setOnClickListener(view -> diarrheaCardView.toggle());
         headacheCardView.setOnClickListener(view -> headacheCardView.toggle());
         loss_taste_smellCardView.setOnClickListener(view -> loss_taste_smellCardView.toggle());
-//        contactView.setOnClickListener(view -> contactView.toggle());
-//        travelView.setOnClickListener(view -> travelView.toggle());
-//        frontlineView.setOnClickListener(view -> frontlineView.toggle());
-
 
         submitButton.setOnClickListener(view -> {
 
             ArrayList<String> selectedItems = new ArrayList<>();
             ArrayList<String> notSelectedItems = new ArrayList<>();
-
+            StringJoiner joiner = new StringJoiner("\t");
             User user = null;
+            int age, sex;
+            double res;
 
             Bundle bundle = getIntent().getExtras();
             if(bundle != null) {
                 user = Parcels.unwrap(getIntent().getParcelableExtra("user"));
             }
 
-            String sex = user.gender;
-            String age = user.ageGroup;
-
-            switch (age) {
-                case "below 24": age = "below24"; break;
-                case "25 to 34": age = "Age25to34"; break;
-                case "35 to 44": age = "Age35to44"; break;
-                case "45 to 54": age = "Age45to54"; break;
-                case "55 to 64": age = "Age55to64"; break;
-                case "65 above": age = "Above65"; break;
+            switch (user.gender) {
+                case "Female": sex = 0; break;
+                case "Male": sex = 1; break;
                 default: throw new IllegalArgumentException();
             }
-            Log.i("AGE", age);
+            joiner.add(String.valueOf(sex));
+
+            switch (user.ageGroup) {
+                case "below 24": age = 0; break;
+                case "25 to 34": age = 1; break;
+                case "35 to 44": age = 2; break;
+                case "45 to 54": age = 3; break;
+                case "55 to 64": age = 4; break;
+                case "65 above": age = 5; break;
+                default: throw new IllegalArgumentException();
+            }
+            joiner.add(String.valueOf(age+1));
 
             if(feverCardView.isChecked()) {
                 selectedItems.add("SYM_FEVER");
+                joiner.add("1");
             } else {
                 notSelectedItems.add("SYM_FEVER");
+                joiner.add("0");
             }
 
             if(coughCardView.isChecked()) {
                 selectedItems.add("SYM_COUGH");
+                joiner.add("1");
             } else {
                 notSelectedItems.add("SYM_COUGH");
-            }
-
-            if(fatigueCardView.isChecked()) {
-                selectedItems.add("SYM_FATIGUE");
-            } else {
-                notSelectedItems.add("SYM_FATIGUE");
-            }
-
-            if(acheCardView.isChecked()) {
-                selectedItems.add("SYM_MUSCLEPAIN");
-            } else {
-                notSelectedItems.add("SYM_MUSCLEPAIN");
-            }
-
-            if(runny_noseCardView.isChecked()) {
-                selectedItems.add("SYM_RUNNY_NOSE");
-            } else {
-                notSelectedItems.add("SYM_RUNNY_NOSE");
-            }
-
-            if(sore_throatCardView.isChecked()) {
-                selectedItems.add("SYM_THROAT");
-            } else {
-                notSelectedItems.add("SYM_THROAT");
+                joiner.add("0");
             }
 
             if(diff_breathCardView.isChecked()) {
                 selectedItems.add("SYM_SHORT_BREATH");
+                joiner.add("1");
             } else {
                 notSelectedItems.add("SYM_SHORT_BREATH");
-            }
-
-            if(diarrheaCardView.isChecked()) {
-                selectedItems.add("SYM_DIARRHEA");
-            } else {
-                notSelectedItems.add("SYM_DIARRHEA");
+                joiner.add("0");
             }
 
             if(headacheCardView.isChecked()) {
                 selectedItems.add("SYM_HEADACHE");
+                joiner.add("1");
             } else {
                 notSelectedItems.add("SYM_HEADACHE");
+                joiner.add("0");
+            }
+
+            if(fatigueCardView.isChecked()) {
+                selectedItems.add("SYM_FATIGUE");
+                joiner.add("1");
+            } else {
+                notSelectedItems.add("SYM_FATIGUE");
+                joiner.add("0");
+            }
+
+            if(acheCardView.isChecked()) {
+                selectedItems.add("SYM_MUSCLEPAIN");
+                joiner.add("1");
+            } else {
+                notSelectedItems.add("SYM_MUSCLEPAIN");
+                joiner.add("0");
+            }
+
+            if(sore_throatCardView.isChecked()) {
+                selectedItems.add("SYM_THROAT");
+                joiner.add("1");
+            } else {
+                notSelectedItems.add("SYM_THROAT");
+                joiner.add("0");
             }
 
             if(loss_taste_smellCardView.isChecked()) {
                 selectedItems.add("SYM_SMELL_TASTE");
+                joiner.add("1");
             } else {
                 notSelectedItems.add("SYM_SMELL_TASTE");
+                joiner.add("0");
             }
 
-//            if(travelView.isChecked()) selectedItems.add("TravelledOutside");
-//            if(contactView.isChecked()) selectedItems.add("CloseContact");
-//            if(frontlineView.isChecked()) selectedItems.add("Frontliner");
+            if(diarrheaCardView.isChecked()) {
+                selectedItems.add("SYM_DIARRHEA");
+                joiner.add("1");
+            } else {
+                notSelectedItems.add("SYM_DIARRHEA");
+                joiner.add("0");
+            }
 
-            Context context = DiagnoseActivity.this;
-            InferenceEngine inferenceEngine = new InferenceEngine(context);
-            double res = inferenceEngine.getProbability(selectedItems, notSelectedItems, sex, age) * 100;
+            if(runny_noseCardView.isChecked()) {
+                selectedItems.add("SYM_RUNNY_NOSE");
+                joiner.add("1");
+            } else {
+                notSelectedItems.add("SYM_RUNNY_NOSE");
+                joiner.add("0");
+            }
+
+            if(selectedItems.isEmpty()) {
+                res = 0.02587925091 * 100;
+            } else {
+                InferenceEngine inferenceEngine = new InferenceEngine(this);
+                res = inferenceEngine.getProbability(selectedItems, notSelectedItems, sex, age) * 100;
+
+                if(res>50) {
+                    joiner.add("1");
+                } else {
+                    joiner.add("2");
+                }
+                String data = joiner.toString() + "\n";
+                try {
+                    addToDataset(data);
+                } catch (IOException e) {
+                    Log.e("FILE-ERR1", e.getMessage());
+                }
+            }
 
             Intent result = new Intent(this, ResultActivity.class);
             result.putExtra("result", res);
-            Log.i("RESULT", String.valueOf(res));
             result.putExtra("user", Parcels.wrap(user));
             startActivity(result);
         });
+    }
+
+    private void addToDataset (String data) throws IOException {
+
+        FileOutputStream fos = null;
+        OutputStreamWriter osw = null;
+        File file = new File(getFilesDir()+"/dataset.txt");
+
+        try {
+            fos = new FileOutputStream(file, true);
+            osw = new OutputStreamWriter(fos);
+            osw.append(data);
+            osw.close();
+            fos.close();
+        } catch (IOException e) {
+            Log.e("FILE-ERR2", e.getMessage());
+        } finally {
+            if(osw != null) {
+                osw.close();
+                osw = null;
+            }
+            if(fos != null) {
+                fos.close();
+                fos = null;
+            }
+        }
     }
 }

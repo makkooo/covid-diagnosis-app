@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         MaterialButton startButton, learnButton;
 
+        BayesianNetwork bayesianNetwork = new BayesianNetwork(this);
+
         startButton = findViewById(R.id.main_act_start_btn);
         learnButton = findViewById(R.id.main_act_learn_btn);
 
