@@ -1,6 +1,5 @@
 package com.covidapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -182,6 +181,7 @@ public class DiagnoseActivity extends AppCompatActivity {
                 } else {
                     joiner.add("2");
                 }
+
                 String data = joiner.toString() + "\n";
                 try {
                     addToDataset(data);
@@ -201,7 +201,7 @@ public class DiagnoseActivity extends AppCompatActivity {
 
         FileOutputStream fos = null;
         OutputStreamWriter osw = null;
-        File file = new File(getFilesDir()+"/dataset.txt");
+        File file = new File(getFilesDir() + "/dataset.txt");
 
         try {
             fos = new FileOutputStream(file, true);

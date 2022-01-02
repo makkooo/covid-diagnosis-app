@@ -20,17 +20,18 @@
 	<variable id="COVID" tier="2" position="55 156 127 192" />
 	<force from="SEX" to="COVID" />
 	<force from="AGE_CAT" to="COVID" />
-	<force from="COVID" to="SYM_FEVER" />
-	<force from="COVID" to="SYM_COUGH" />
-	<force from="COVID" to="SYM_HEADACHE" />
-	<force from="COVID" to="SYM_MUSCLEPAIN" />
-	<force from="COVID" to="SYM_SMELL_TASTE" />
-	<force from="COVID" to="SYM_RUNNY_NOSE" />
-	<force from="COVID" to="SYM_SHORT_BREATH" />
-	<force from="COVID" to="SYM_FATIGUE" />
-	<force from="COVID" to="SYM_DIARRHEA" />
-	<force from="COVID" to="SYM_THROAT" />
 	<force from="SYM_FEVER" to="SYM_HEADACHE" />
 	<force from="SYM_SHORT_BREATH" to="SYM_COUGH" />
 	<force from="SYM_RUNNY_NOSE" to="SYM_SMELL_TASTE" />
+	<force from="COVID" to="SYM_FEVER" />
+	<force from="COVID" to="SYM_COUGH" />
+	<force from="COVID" to="SYM_SHORT_BREATH" />
+	<force from="COVID" to="SYM_HEADACHE" />
+	<force from="COVID" to="SYM_FATIGUE" />
+	<force from="COVID" to="SYM_MUSCLEPAIN" />
+	<force from="COVID" to="SYM_THROAT" />
+	<force from="COVID" to="SYM_SMELL_TASTE" />
+	<force from="COVID" to="SYM_DIARRHEA" />
+	<force from="COVID" to="SYM_RUNNY_NOSE" />
+	<force from="SYM_FATIGUE" to="SYM_SHORT_BREATH" />
 </knowledge>

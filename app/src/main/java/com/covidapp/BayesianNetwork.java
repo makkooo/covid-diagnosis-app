@@ -1,20 +1,13 @@
 package com.covidapp;
 
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.util.Log;
-import android.util.TypedValue;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import smile.Network;
 import smile.learning.BayesianSearch;
 import smile.learning.BkKnowledge;
+import smile.learning.DataMatch;
 import smile.learning.DataSet;
+import smile.learning.EM;
 
 public class BayesianNetwork {
 
@@ -28,6 +21,12 @@ public class BayesianNetwork {
 
         File dir = context.getFilesDir();
 
+        // For model validation only
+//        Network net = new Network();
+//        String covidModel = dir + "/covid-model.xdsl";
+//        net.readFile(covidModel);
+
+        // For production
         DataSet ds = new DataSet();
         String dataset = dir + "/dataset.txt";
         ds.readFile(dataset);
@@ -38,13 +37,14 @@ public class BayesianNetwork {
 
         BayesianSearch bayesianSearch = new BayesianSearch();
         bayesianSearch.setBkKnowledge(bkKnowledge);
-        bayesianSearch.setMaxParents(7);
+        bayesianSearch.setMaxParents(8);
         bayesianSearch.setIterationCount(50);
         bayesianSearch.setPriorSampleSize(50);
+        bayesianSearch.setRandSeed(3);
+        bayesianSearch.setLinkProbability(0.5);
+        bayesianSearch.setPriorLinkProbability(0.05);
 
         Network net = bayesianSearch.learn(ds);
-        String outFile = dir + "/network.xdsl";
-        net.writeFile(outFile);
         return net;
     }
 }
