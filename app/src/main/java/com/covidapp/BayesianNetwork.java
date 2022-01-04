@@ -38,11 +38,11 @@ public class BayesianNetwork {
         BayesianSearch bayesianSearch = new BayesianSearch();
         bayesianSearch.setBkKnowledge(bkKnowledge);
         bayesianSearch.setMaxParents(8);
-        bayesianSearch.setIterationCount(50);
+        bayesianSearch.setIterationCount(20);
         bayesianSearch.setPriorSampleSize(50);
         bayesianSearch.setRandSeed(3);
-        bayesianSearch.setLinkProbability(0.5);
-        bayesianSearch.setPriorLinkProbability(0.05);
+        bayesianSearch.setLinkProbability(0.1);
+        bayesianSearch.setPriorLinkProbability(0.001);
 
         Network net = bayesianSearch.learn(ds);
         return net;

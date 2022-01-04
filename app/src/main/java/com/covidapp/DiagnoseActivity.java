@@ -176,7 +176,7 @@ public class DiagnoseActivity extends AppCompatActivity {
                 InferenceEngine inferenceEngine = new InferenceEngine(this);
                 res = inferenceEngine.getProbability(selectedItems, notSelectedItems, sex, age) * 100;
 
-                if(res>50) {
+                if(res>=50) {
                     joiner.add("1");
                 } else {
                     joiner.add("2");

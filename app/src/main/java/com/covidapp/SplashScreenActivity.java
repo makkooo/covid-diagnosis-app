@@ -49,6 +49,15 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         }
 
+        File bkKno = new File(getFilesDir(), "network-knowledge.gkno");
+        if(!bkKno.exists()) {
+            try {
+                assetUtils.copyAsset(this, getFilesDir(), "network-knowledge.gkno");
+            } catch (IOException e) {
+                Log.e("IOException", e.getCause().toString());
+            }
+        }
+
         // License issued by BayesFusion Licensing Server
         // This code must be executed before any other jSMILE object is created
         new smile.License(

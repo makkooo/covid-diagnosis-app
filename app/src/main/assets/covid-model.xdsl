@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="ahri_dataset_cleaned_train" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="AGE_CAT">
+			<state id="State1" />
+			<state id="State2" />
+			<state id="State3" />
+			<state id="State4" />
+			<state id="State5" />
+			<state id="State6" />
+			<probabilities>0.1102941176470588 0.3014705882352941 0.3897058823529412 0.1470588235294118 0.04411764705882353 0.007352941176470588</probabilities>
+		</cpt>
+		<cpt id="SEX">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>AGE_CAT</parents>
+			<probabilities>0.7333333333333333 0.2666666666666667 0.3902439024390244 0.6097560975609756 0.1509433962264151 0.8490566037735848 0.3 0.7000000000000001 0.3333333333333333 0.6666666666666666 0.25 0.75</probabilities>
+		</cpt>
+		<cpt id="COVID">
+			<state id="State1" />
+			<state id="State2" />
+			<parents>SEX AGE_CAT</parents>
+			<probabilities>0.3636363636363636 0.6363636363636364 0.6875 0.3125 0.375 0.625 0.3333333333333333 0.6666666666666666 0.5 0.5 0.5 0.5 0.75 0.25 0.52 0.48 0.4888888888888889 0.5111111111111112 0.3571428571428571 0.6428571428571428 0.9 0.1 0.25 0.75</probabilities>
+		</cpt>
+		<cpt id="SYM_THROAT">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID</parents>
+			<probabilities>0.7647058823529411 0.2352941176470588 0.6323529411764706 0.3676470588235294</probabilities>
+		</cpt>
+		<cpt id="SYM_COUGH">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID SYM_THROAT</parents>
+			<probabilities>0.5192307692307693 0.4807692307692308 0.1875 0.8125 0.7209302325581395 0.2790697674418605 0.32 0.68</probabilities>
+		</cpt>
+		<cpt id="SYM_FEVER">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID SYM_COUGH</parents>
+			<probabilities>0.6666666666666666 0.3333333333333333 0.2105263157894737 0.7894736842105263 0.4615384615384615 0.5384615384615384 0.4482758620689655 0.5517241379310345</probabilities>
+		</cpt>
+		<cpt id="SYM_SHORT_BREATH">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID</parents>
+			<probabilities>0.5147058823529411 0.4852941176470588 0.7647058823529411 0.2352941176470588</probabilities>
+		</cpt>
+		<cpt id="SYM_HEADACHE">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID SYM_FEVER</parents>
+			<probabilities>0.7857142857142857 0.2142857142857143 0.425 0.5750000000000001 0.6129032258064516 0.3870967741935484 0.4054054054054054 0.5945945945945946</probabilities>
+		</cpt>
+		<cpt id="SYM_SMELL_TASTE">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID</parents>
+			<probabilities>0.7794117647058824 0.2205882352941176 0.9264705882352942 0.07352941176470588</probabilities>
+		</cpt>
+		<cpt id="SYM_FATIGUE">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID SEX SYM_SMELL_TASTE</parents>
+			<probabilities>0.8823529411764706 0.1176470588235294 0.1 0.9 0.4722222222222222 0.5277777777777778 0.7272727272727273 0.2727272727272727 0.55 0.45 0.1666666666666667 0.8333333333333333 0.7441860465116279 0.2558139534883721 0.3333333333333333 0.6666666666666666</probabilities>
+		</cpt>
+		<cpt id="SYM_MUSCLEPAIN">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID</parents>
+			<probabilities>0.7058823529411764 0.2941176470588235 0.7352941176470588 0.2647058823529412</probabilities>
+		</cpt>
+		<cpt id="SYM_DIARRHEA">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID</parents>
+			<probabilities>0.8529411764705882 0.1470588235294118 0.8970588235294118 0.1029411764705882</probabilities>
+		</cpt>
+		<cpt id="SYM_RUNNY_NOSE">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>COVID</parents>
+			<probabilities>0.8676470588235294 0.1323529411764706 0.6617647058823529 0.3382352941176471</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.6518.0 ACADEMIC" name="ahri-dataset-cleaned-train">
+			<node id="COVID">
+				<name>COVID</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>863 221 935 269</position>
+			</node>
+			<node id="SEX">
+				<name>SEX</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>498 199 570 247</position>
+			</node>
+			<node id="AGE_CAT">
+				<name>AGE_CAT</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>497 402 569 450</position>
+			</node>
+			<node id="SYM_FEVER">
+				<name>SYM_FEVER</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1413 275 1485 323</position>
+			</node>
+			<node id="SYM_COUGH">
+				<name>SYM_COUGH</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1442 387 1514 435</position>
+			</node>
+			<node id="SYM_SHORT_BREATH">
+				<name>SYM_SHORT_BREATH</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1173 137 1245 185</position>
+			</node>
+			<node id="SYM_HEADACHE">
+				<name>SYM_HEADACHE</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1316 177 1388 225</position>
+			</node>
+			<node id="SYM_FATIGUE">
+				<name>SYM_FATIGUE</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1437 466 1509 514</position>
+			</node>
+			<node id="SYM_MUSCLEPAIN">
+				<name>SYM_MUSCLEPAIN</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1353 560 1425 608</position>
+			</node>
+			<node id="SYM_THROAT">
+				<name>SYM_THROAT</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1239 623 1311 671</position>
+			</node>
+			<node id="SYM_SMELL_TASTE">
+				<name>SYM_SMELL_TASTE</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1087 637 1159 685</position>
+			</node>
+			<node id="SYM_DIARRHEA">
+				<name>SYM_DIARRHEA</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>955 629 1027 677</position>
+			</node>
+			<node id="SYM_RUNNY_NOSE">
+				<name>SYM_RUNNY_NOSE</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>831 544 903 592</position>
+			</node>
+			<textbox>
+				<caption>Input file: ahri-dataset-cleaned-train.csv\nData rows: 136\nElapsed time: 95.453s\n\nLearning algorithm: Bayesian Search\nAlgorithm parameters:\nIterations: 150\nMax parent count: 8\nSample size: 50\nLink probability: 0.5\nPrior link probability: 0.07\nSeed: 0\nMax search time: 0\nScore by accuracy (Leave One Out), class variable: ﻿COVID\nBackground knowledge was provided:\n  forced arcs: 13\n  nodes assigned to tiers: 13\n\nBest accuracy in iteration 10: 0.669118 (91/136)\nEM Log Likelihood: -1114.87</caption>
+				<font color="000000" name="Arial" size="8" />
+				<position>10 398 298 678</position>
+			</textbox>
+		</genie>
+	</extensions>
+</smile>
