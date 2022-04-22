@@ -22,23 +22,23 @@ public class LocationBarChart {
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
-        entries.add(new BarEntry(0, 103837));
-        entries.add(new BarEntry(1, 134595));
-        entries.add(new BarEntry(2, 278346));
-        entries.add(new BarEntry(3, 490817));
-        entries.add(new BarEntry(4, 36660));
-        entries.add(new BarEntry(5, 50880));
-        entries.add(new BarEntry(6, 150269));
-        entries.add(new BarEntry(7, 153633));
-        entries.add(new BarEntry(8, 53241));
-        entries.add(new BarEntry(9, 51873));
-        entries.add(new BarEntry(10, 85099));
-        entries.add(new BarEntry(11, 105933));
-        entries.add(new BarEntry(12, 59222));
-        entries.add(new BarEntry(13, 50145));
-        entries.add(new BarEntry(14, 841846));
-        entries.add(new BarEntry(15, 92274));
-        entries.add(new BarEntry(16, 19149));
+        entries.add(new BarEntry(0, 130101));
+        entries.add(new BarEntry(1, 158354));
+        entries.add(new BarEntry(2, 353622));
+        entries.add(new BarEntry(3, 643081));
+        entries.add(new BarEntry(4, 42631));
+        entries.add(new BarEntry(5, 64131));
+        entries.add(new BarEntry(6, 185707));
+        entries.add(new BarEntry(7, 186119));
+        entries.add(new BarEntry(8, 63075));
+        entries.add(new BarEntry(9, 63316));
+        entries.add(new BarEntry(10, 102427));
+        entries.add(new BarEntry(11, 133962));
+        entries.add(new BarEntry(12, 71306));
+        entries.add(new BarEntry(13, 60124));
+        entries.add(new BarEntry(14, 1144862));
+        entries.add(new BarEntry(15, 115718));
+        entries.add(new BarEntry(16, 24929));
 
         BarDataSet locationBarDataSet = new BarDataSet(entries, "Number of Cases");
 

@@ -171,7 +171,7 @@ public class DiagnoseActivity extends AppCompatActivity {
             }
 
             if(selectedItems.isEmpty()) {
-                res = 0.02587925091 * 100;
+                res = 2.89;
             } else {
                 InferenceEngine inferenceEngine = new InferenceEngine(this);
                 res = inferenceEngine.getProbability(selectedItems, notSelectedItems, sex, age) * 100;

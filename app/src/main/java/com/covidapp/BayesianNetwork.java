@@ -43,8 +43,8 @@ public class BayesianNetwork {
         bayesianSearch.setRandSeed(3);
         bayesianSearch.setLinkProbability(0.1);
         bayesianSearch.setPriorLinkProbability(0.001);
-
         Network net = bayesianSearch.learn(ds);
+
         return net;
     }
 }

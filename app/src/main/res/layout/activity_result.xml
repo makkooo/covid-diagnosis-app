@@ -119,16 +119,16 @@
             android:textSize="30sp"
             android:textColor="#424242"/>
 
-        <TextView
-            android:id="@+id/res_act_stat_subtitle_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingBottom="10dp"
-            android:fontFamily="@font/nunito_italic"
-            android:text="COVID-19 statistics as of November 12, 2021"
-            android:textSize="12sp"
-            android:textColor="#424242"/>
+<!--        <TextView-->
+<!--            android:id="@+id/res_act_stat_subtitle_tv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:fontFamily="@font/nunito_italic"-->
+<!--            android:text="COVID-19 statistics as of November 12, 2021"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="#424242"/>-->
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"

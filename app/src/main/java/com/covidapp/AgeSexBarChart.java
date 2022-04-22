@@ -24,20 +24,20 @@ public class AgeSexBarChart {
         ArrayList<BarEntry> entries2 = new ArrayList<>();
 
         // Male Data
-        entries1.add(new BarEntry(0, 302154));
-        entries1.add(new BarEntry(1, 361382));
-        entries1.add(new BarEntry(2, 257752));
-        entries1.add(new BarEntry(3, 188033));
-        entries1.add(new BarEntry(4, 139563));
-        entries1.add(new BarEntry(4, 119425));
+        entries1.add(new BarEntry(0, 373325));
+        entries1.add(new BarEntry(1, 473254));
+        entries1.add(new BarEntry(2, 332248));
+        entries1.add(new BarEntry(3, 234971));
+        entries1.add(new BarEntry(4, 168418));
+        entries1.add(new BarEntry(4, 142718));
 
         // Female Data
-        entries2.add(new BarEntry(0, 316600));
-        entries2.add(new BarEntry(1, 352905));
-        entries2.add(new BarEntry(2, 230000));
-        entries2.add(new BarEntry(3, 181610));
-        entries2.add(new BarEntry(4, 152989));
-        entries2.add(new BarEntry(4, 145920));
+        entries2.add(new BarEntry(0, 406377));
+        entries2.add(new BarEntry(1, 495238));
+        entries2.add(new BarEntry(2, 310562));
+        entries2.add(new BarEntry(3, 230853));
+        entries2.add(new BarEntry(4, 186599));
+        entries2.add(new BarEntry(4, 175610));
 
         BarDataSet maleBarDataSet = new BarDataSet(entries1, "Male");
         BarDataSet femaleBarDataSet = new BarDataSet(entries2, "Female");
