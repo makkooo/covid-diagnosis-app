@@ -61,19 +61,19 @@ public class SplashScreenActivity extends AppCompatActivity {
         // License issued by BayesFusion Licensing Server
         // This code must be executed before any other jSMILE object is created
         new smile.License(
-                "SMILE LICENSE 70c62b52 3fdb9f94 13f931be " +
+                "SMILE LICENSE 33761833 7c31efe3 638e02df " +
                         "THIS IS AN EVALUATION LICENSE THAT " +
                         "CANNOT BE USED FOR COMMERCIAL PURPOSES. " +
-                        "Serial #: 8bzq85hktef0c49gwgj5y3hsp " +
-                        "Valid until: 2022-03-15 " +
+                        "Serial #: 8sbmo9g8jxkcdn342eqgo6t54 " +
+                        "Valid until: 2022-09-02 " +
                         "Issued for: Mark (mrobrigado03@gmail.com) " +
                         "Organization: Polytechnic University of the Philippines " +
                         "Issued by BayesFusion activation server",
                 new byte[] {
-                        -71,67,62,-119,67,-107,-58,-15,70,121,112,-53,38,-49,-35,-35,
-                        -72,73,-114,-104,115,103,118,16,72,-64,-12,-2,87,-24,37,-81,
-                        65,-8,5,74,-110,34,-77,-115,-52,-34,109,-20,85,79,45,-121,
-                        117,-91,1,85,2,-124,-74,1,-104,42,-86,79,-123,-35,110,8
+                        96,-110,-6,9,27,43,-92,75,-65,11,-101,-29,-32,-76,-53,-51,
+                        -127,7,-1,-116,-119,54,-58,81,-3,-107,102,-71,-103,39,110,0,
+                        120,-122,-9,77,-47,-53,-74,5,-48,-93,19,89,71,-106,127,-7,
+                        -21,0,64,-27,57,-80,86,-29,37,14,-115,111,99,93,-100,8
                 }
         );
 
